@@ -2,4 +2,4 @@
 
 ## Tracks
 
-ACVM Simulator Repository [noir-lang/acvm-simulator@b24461c](https://github.com/noir-lang/acvm-simulator/tree/4dddad186318fad05799606d89071dc53fd3cc6c)
+ACVM Simulator Repository [noir-lang/acvm-simulator@0a6675a6](https://github.com/noir-lang/acvm-simulator/tree/0a6675a67d54dd16abb8631905ed79d9b3bb873b)
