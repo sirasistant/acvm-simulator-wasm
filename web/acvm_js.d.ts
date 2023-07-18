@@ -68,6 +68,20 @@ export function getPublicParametersWitness(circuit: Uint8Array, solved_witness: 
 */
 export function getPublicWitness(circuit: Uint8Array, solved_witness: WitnessMap): WitnessMap;
 
+export type ForeignCallInput = string[]
+export type ForeignCallOutput = string | string[]
+
+/**
+* A callback which performs an foreign call and returns the response.
+* @callback ForeignCallHandler
+* @param {string} name - The identifier for the type of foreign call being performed.
+* @param {string[][]} inputs - An array of hex encoded inputs to the foreign call.
+* @returns {Promise<string[]>} outputs - An array of hex encoded outputs containing the results of the foreign call.
+*/
+export type ForeignCallHandler = (name: string, inputs: ForeignCallInput[]) => Promise<ForeignCallOutput[]>;
+
+
+
 /**
 * @typedef {Object} BuildInfo - Information about how the installed package was built
 * @property {string} gitHash - The hash of the git commit from which the package was built. 
@@ -83,20 +97,6 @@ export type BuildInfo = {
 
 
 export type LogLevel = "OFF" | "ERROR" | "WARN" | "INFO" | "DEBUG" | "TRACE";
-
-
-
-export type ForeignCallInput = string[]
-export type ForeignCallOutput = string | string[]
-
-/**
-* A callback which performs an foreign call and returns the response.
-* @callback ForeignCallHandler
-* @param {string} name - The identifier for the type of foreign call being performed.
-* @param {string[][]} inputs - An array of hex encoded inputs to the foreign call.
-* @returns {Promise<string[]>} outputs - An array of hex encoded outputs containing the results of the foreign call.
-*/
-export type ForeignCallHandler = (name: string, inputs: ForeignCallInput[]) => Promise<ForeignCallOutput[]>;
 
 
 
